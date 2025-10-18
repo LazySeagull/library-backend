@@ -11,4 +11,4 @@ router.get('/' , (req , res) => {
     res.json({message : 'review list working'})
 });
 
-module.export = router;
+module.exports = router;

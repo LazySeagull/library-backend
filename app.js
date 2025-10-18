@@ -1,7 +1,9 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const { appendFile } = require('fs');
 const router = express.Router();
+const app = express();
 
 app.use(cors());
 app.use(express.json());
@@ -9,7 +11,7 @@ app.use(express.json());
 const authRoutes = require('./routes/auth');
 const bookroutes = require('./routes/books');
 const reviewroutes = require('./routes/reviews');
-const transactionroutes = require('.routes/transactions');
+const transactionroutes = require('./routes/transactions');
 
 app.use('api/auth' , authRoutes);
 app.use('api/books' , bookroutes);
