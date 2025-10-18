@@ -1,14 +1,15 @@
 const express = require('express');
 const router = express.Router();
+const { authenticate } = require('../middlewares/authMiddleware');
 
-router.post('/' , (req , res) => {
-
-    res.json({message : 'review added'})
-
+// Public - anyone can view reviews
+router.get('/', (req, res) => {
+  res.json({ message: 'Public: List of all book reviews' });
 });
 
-router.get('/' , (req , res) => {
-    res.json({message : 'review list working'})
+// Logged-in users can add reviews
+router.post('/', authenticate, (req, res) => {
+  res.json({ message: `Review added by ${req.user.name}` });
 });
 
 module.exports = router;
