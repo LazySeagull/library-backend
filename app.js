@@ -13,10 +13,10 @@ const bookroutes = require('./routes/books');
 const reviewroutes = require('./routes/reviews');
 const transactionroutes = require('./routes/transactions');
 
-app.use('api/auth' , authRoutes);
-app.use('api/books' , bookroutes);
-app.use('api/reviews' , reviewroutes);
-app.use('api/transactions' , transactionroutes);
+app.use('/api/auth' , authRoutes);
+app.use('/api/books' , bookroutes);
+app.use('/api/reviews' , reviewroutes);
+app.use('/api/transactions' , transactionroutes);
 
 //test
 
