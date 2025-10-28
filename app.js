@@ -4,9 +4,14 @@ const cors = require('cors');
 const { appendFile } = require('fs');
 const router = express.Router();
 const app = express();
+const connectMongo = require('./models/mongo');
+
 
 app.use(cors());
 app.use(express.json());
+
+connectMongo();
+
 
 const authRoutes = require('./routes/auth');
 const bookroutes = require('./routes/books');
