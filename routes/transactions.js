@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { authenticate, authorize } = require('../middlewares/authMiddleware');
-const db = require('../utils/transactions_mock');
+const db = require('../utils/transactions_mysql');
 
 // POST /api/transactions/issue — user issues a book
 router.post('/issue', authenticate, async (req, res) => {
